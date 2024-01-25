@@ -1,16 +1,16 @@
-import './App.css';
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
-import CanvasPage from './components/CanvasPage';
-import DownloadPage from './components/DownloadPage';
+import "./App.css";
+import { Routes, Route, Outlet } from "react-router-dom";
+import CanvasPage from "./components/CanvasPage";
+import DownloadPage from "./components/DownloadPage";
+
 function App() {
   return (
     <div className="App">
-      <Router>
-        <Routes>
-          <Route path="/" element={<CanvasPage/>}/>
-          <Route path="/download" element={<DownloadPage/>}/>
-        </Routes>
-      </Router>
+      <Routes>
+        <Route path="/" element={<CanvasPage />} />
+        <Route path="/downloadPage" element={<DownloadPage />} />
+      </Routes>
+      <Outlet />
     </div>
   );
 }
